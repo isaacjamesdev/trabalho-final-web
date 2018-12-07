@@ -6,7 +6,7 @@ api.list = (req,res)=>{
     model.find({})
         .then(products =>{
             res.json(products);
-        }, error =>{
+        }, error => {
             console.log('error in serve');
             res.status(500).json(error);
             }
@@ -47,9 +47,9 @@ api.remove = (req,res)=>{
 
 api.update = (req,res)=>{
     model.findByIdAndUpdate(req.body.id,req.body)
-        .then(foto=>{
-
-        },error=>{
+        .then(photo => {
+            res.json(photo)
+        }, error => {
             console.log().json;
             res.status(404)
         });

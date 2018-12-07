@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
 var api = {};
-var model = mongoose.model('Product');
+var model = mongoose.model('User');
 
-api.list = (req,res)=>{
+api.list = (req, res) => {
     model.find({})
-        .then(products =>{
-            res.json(products);
+        .then(users => {
+            res.json(users);
         }, error => {
             console.log('error in serve');
             res.status(500).json(error);
@@ -13,21 +13,11 @@ api.list = (req,res)=>{
         );
 }
 
-/*
-contact.list = (req,res)=>{
-    request.get(externalApi, (error, response, body) =>{
-        res.render('list',{
-            contacts: JSON.parse(body)
-        })
-    });    
-}
-*/
-
 api.findById = (req,res)=>{
     model.findById(req.params.id)
-        .then(product =>{
-            if(!product) throw Error('product not found');
-            res.json(product);
+        .then(users =>{
+            if(!users) throw Error('user not found');
+            res.json(users);
         }, error =>{
             console.log(error);
             res.status(404).json(error);
@@ -47,9 +37,9 @@ api.remove = (req,res)=>{
 
 api.update = (req,res)=>{
     model.findByIdAndUpdate(req.body.id,req.body)
-        .then(photo => {
-            res.json(photo)
-        }, error => {
+        .then(users => {
+            res.json(users)
+        },error => {
             console.log().json;
             res.status(404)
         });

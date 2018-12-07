@@ -17,10 +17,10 @@ var schema = mongoose.Schema({
         type: Number,
         required: true
     },
-    store:{
+    stock:{
         type: Number,
         required: true
     }
 });
 
-mongoose.model('Product',schema);
+mongoose.model('Product', schema);

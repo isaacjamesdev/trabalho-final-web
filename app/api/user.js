@@ -13,6 +13,35 @@ api.list = (req, res) => {
         );
 }
 
+api.register = (req, res) => {
+    model.create({firstName: req.body.firstName, middleName: req.body.middleName,
+        email: req.body.email, address: {
+            cep: req.body.cep,
+            city: req.body.city,
+            state: req.body.state,
+            street: req.body.street
+    },
+    orders: {
+        number: req.body.number,
+        name: req.body.name,
+        price: req.body.price,
+        date: req.body.date,
+        address: req.body.address,
+        status: req.body.status
+    }})
+}
+
+api.retrieveDataFromProfile = (req, res) => {
+    model.findById(req.params.id)
+        .then(user => {
+            if(!user) throw Error('user not found');
+            res.json(user);
+        }, error => {
+            console.log(error);
+            res.status(404).json(error);
+        });
+}
+
 api.findById = (req,res)=>{
     model.findById(req.params.id)
         .then(users =>{
@@ -43,6 +72,19 @@ api.update = (req,res)=>{
             console.log().json;
             res.status(404)
         });
+}
+
+api.makeOrder = (req, res) => {
+    var order = {
+        number: req.body.number,
+        name: req.body.name,
+        price: req.body.price,
+        date: req.body.date,
+        address: req.body.address,
+        status: req.body.status
+    }
+    
+    model.orders.push(order)
 }
 
 module.exports = api;

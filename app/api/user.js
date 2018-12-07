@@ -22,7 +22,7 @@ api.register = (req, res) => {
     }
     model.create(user)
             .then(user =>{
-                res.json(user)
+                res.redirect('/')
             }, error =>{
                 console.log('error in serve');
                 res.status(500).json(error);

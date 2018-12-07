@@ -20,7 +20,8 @@
                         <h4 class="title"><%=product.title%></h4>
                     </figcaption>
                     <div class="bottom-wrap">
-                        <a href="" class="btn btn-sm btn-primary float-right">Order Now</a>	
+                        <a href="/product/<%=product._id %>" class="btn btn-sm btn-primary float-right">Details</a>	
+                        <a href="/add-to-cart/<%=product._id %>" class="btn btn-sm btn-primary float-right">Add to cart</a>	
                         <div class="price-wrap h5">
                             <span class="price-new"><%=product.price %></span>
                         </div> <!-- price-wrap.// -->

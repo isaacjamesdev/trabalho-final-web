@@ -36,18 +36,15 @@ module.exports = (app)=>{
     }
     
     api.findById = (req,res)=>{
-        if (req.params.id.match(/^[0-9a-fA-F]{24}$/)) {
-            model.findById(req.params.id)
+        model.findById(req.params.id)
                 .then(product =>{
                     if(!product) throw Error('product not found');
-                    res.render('product-details',{product:res.json(product)})
-                }, error =>{
+                    res.render('product-details',{product: product})
+                    }, error =>{
                     console.log(error);
                     res.status(404).json(error);
-                }
+                    }
                 );
-        }
-        res.end('fodasse mew');
     }
     
     api.remove = (req,res)=>{

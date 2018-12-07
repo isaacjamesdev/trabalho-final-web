@@ -58,3 +58,5 @@ var schema = mongoose.Schema({
         }
     }]
 });
+
+mongoose.model('User', schema);

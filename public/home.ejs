@@ -9,9 +9,10 @@
 </head>
 <body>
     <% include partials/header%>
-    <%products%>
+    <% include nav%>
     <section>
         <div class="container">
+            <%products%>
             <% products.forEach(function(product){ %>
                 <figure class="card card-product">
                     <div class="img-wrap"><img src="<%=product.url %>"></div>

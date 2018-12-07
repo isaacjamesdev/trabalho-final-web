@@ -5,7 +5,7 @@ module.exports = function(uri){
     mongoose.connect(uri, { useNewUrlParser: true });
     
     mongoose.connection.on('connected',()=>{
-        console.log('concetado ao MongoDB');
+        console.log('conectado ao MongoDB');
     });
     
     mongoose.connection.on('error', function(error) {

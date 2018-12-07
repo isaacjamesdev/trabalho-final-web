@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var schema = mongoose.Schema({
-    title:{
+    titulo:{
         type: String,
         required: true
     },

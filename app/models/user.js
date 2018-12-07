@@ -9,7 +9,7 @@ var schema = mongoose.Schema({
         type: String,
         required: true
     },
-    email:{
+    emmail:{
         type: String,
         required: true
     },
@@ -18,7 +18,7 @@ var schema = mongoose.Schema({
             type: Number,
             required: true
         },
-        city:{
+        citry:{
             type: String,
             required: true
         },
@@ -58,5 +58,3 @@ var schema = mongoose.Schema({
         }
     }]
 });
-
-mongoose.model('User', schema);

@@ -7,7 +7,7 @@ api.list = (req,res)=>{
         .then(products =>{
             res.json(products);
         }, error =>{
-            console.log('error in serve');
+            console.log('erro in serve');
             res.status(500).json(error);
             }
         );

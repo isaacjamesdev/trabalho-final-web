@@ -1,12 +1,21 @@
 const express = require('express');
-const app = express();
 var consign = require('consign');
-app.set('views', __dirname+'../app/views');
+var bodyParser = require('body-parser');
+const app = express();
+
+app.set('views', __dirname+'/../public');
 app.set('view engine', 'ejs')
-app.use( express.static('app'))
+
+app.use(bodyParser.urlencoded({
+      extended:true
+  }));
+app.use( express.static('./public'))
 
 consign({cwd:'app'})
       .include('models')
-      .then('routes')(app);
+      .then('api')
+      .then('routes')
+      .into(app);
+
 
 module.exports = app;

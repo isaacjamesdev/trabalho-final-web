@@ -2,7 +2,7 @@ module.exports = (app)=>{
     var api = {}
 
     api.addToCart = (req,res)=>{
-        localStorage.setItem('item', req.params.id);
+        res.render('cart')
     }
 
     return api;

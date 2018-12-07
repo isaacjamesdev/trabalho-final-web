@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var schema = mongoose.Schema({
-    titulo:{
+    title:{
         type: String,
         required: true
     },
@@ -17,7 +17,7 @@ var schema = mongoose.Schema({
         type: Number,
         required: true
     },
-    store:{
+    stock:{
         type: Number,
         required: true
     }

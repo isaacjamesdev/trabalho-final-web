@@ -23,4 +23,4 @@ var schema = mongoose.Schema({
     }
 });
 
-mongoose.model('Product', schema);
+mongoose.model('products', schema);

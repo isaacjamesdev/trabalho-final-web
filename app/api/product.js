@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 module.exports = (app)=>{
     var api = {};
-    var model = mongoose.model('Product');
+    var model = mongoose.model('products');
     
     api.register = (req,res)=>{
         var product = {
@@ -15,7 +15,7 @@ module.exports = (app)=>{
         
         model.create(product)
             .then(product =>{
-                res.json(product)
+                res.redirect('/')
             }, error =>{
                 console.log('error in serve');
                 res.status(500).json(error);

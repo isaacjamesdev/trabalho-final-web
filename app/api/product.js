@@ -15,7 +15,7 @@ module.exports = (app)=>{
         
         model.create(product)
             .then(product =>{
-                res.json(product)
+                res.status(204).redirect('/');
             }, error =>{
                 console.log('error in serve');
                 res.status(500).json(error);

@@ -1,10 +1,13 @@
 module.exports = (app)=>{
-    var api = app.api.product;
-    app.get('/', api.find);
+    var apiProduct = app.api.product;
+    var apiView = app.api.view;
     
-    app.get('/product/register', (req,res)=>{
-        res.render('register-product');
-    });
-    app.post('/product/register', api.register);
-    app.get('/product/:id', api.findById);
+    // apiView
+    app.get('/product/register', apiView.register);
+    
+    // ApiProduct *Importante, a ordem das rotas importam
+    app.get('/', apiProduct.find);
+    app.get('/product/:id', apiProduct.findById);
+    app.get('/:type/:category', apiProduct.find);
+    app.post('/product/register', apiProduct.register);
 }

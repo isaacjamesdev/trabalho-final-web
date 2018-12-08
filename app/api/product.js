@@ -24,7 +24,8 @@ module.exports = (app)=>{
     }
     
     api.find = (req, res)=>{
-        model.find()
+        if(!req.params.type){
+            model.find()
             .then(function(product) {
                 res.render('home', {
                     products: product
@@ -33,6 +34,18 @@ module.exports = (app)=>{
                 console.log(error);
                 res.status(500).json(error);
             });
+        }
+        else{
+            model.find({'category': req.params.category})
+            .then(function(product) {
+                res.render('home', {
+                    products: product
+                })
+            }, function(error) {
+                console.log(error);
+                res.status(500).json(error);
+            });
+        }
     }
     
     api.findById = (req,res)=>{

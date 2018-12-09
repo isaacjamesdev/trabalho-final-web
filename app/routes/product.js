@@ -8,6 +8,11 @@ module.exports = (app)=>{
     // ApiProduct *Importante, a ordem das rotas importam
     app.get('/', apiProduct.find);
     app.get('/product/:id', apiProduct.findById);
-    app.get('/:type/:category', apiProduct.find);
     app.post('/product/register', apiProduct.register);
+    
+    app.get('/gender/:gender', apiProduct.find);
+    app.get('/add-to-cart/:id', apiProduct.addToCart);
+    
+    
+    
 }

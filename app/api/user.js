@@ -22,23 +22,12 @@ api.register = (req, res) => {
     }
     model.create(user)
             .then(user =>{
-                res.json(user)
+                res.status(204).redirect('/')
             }, error =>{
                 console.log('error in serve');
                 res.status(500).json(error);
-            }
+                }
             );
-}
-
-api.retrieveDataFromProfile = (req, res) => {
-    model.findById(req.params.id)
-        .then(user => {
-            if(!user) throw Error('user not found');
-            res.json(user);
-        }, error => {
-            console.log(error);
-            res.status(404).json(error);
-        });
 }
 
 api.findById = (req,res)=>{

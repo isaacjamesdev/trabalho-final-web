@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%=item.title%></title>
+</head>
+<body>
+    <div class="container">
+        <% include partials/head%>
+        <% include partials/header%>
+        <% include partials/nav%>
+        
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <div class="container">
+            <h1></h1>
+            <table id="cart" class="table table-hover table-condensed">
+                <thead>
+                    <tr>
+                        <th style="width:50%">Product</th>
+                        <th style="width:10%">Size</th>
+                        <th style="width:10%">Price</th>
+                        <th style="width:8%">Quantity</th>
+                        <th style="width:11%" class="text-center">Subtotal</th>
+                        <th style="width:10%"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-th="Product">
+                            <div class="row">
+                                <div class="col-sm-2 hidden-xs"><img src="<%=item.url%>" width="80" height="100"  alt="<%=item.title%>" class="img-responsive"/></div>
+                                <div class="col-sm-10">
+                                    <h4 class="nomargin"><%=item.title%></h4>
+                                </div>
+                            </div>
+                        </td>
+                        <td data-th="Size">
+                            <select class="form-control" name="size" id="size">
+                                <option value="S">S</option>
+                                <option value="L">L</option>
+                                <option value="G">G</option>
+                                <option value="XG">XG</option>
+                            </select>
+                        </td>
+                        <td data-th="Price" id="price">$<%=item.price%></td>
+                        <td data-th="Quantity">
+                            <input type="number" class="form-control text-center" value="<%=item.quantity%>" id="quantity">
+                        </td>
+                        <td data-th="Subtotal" class="text-center">$<%=item.quantity * item.price%></td>
+                        <td class="actions" data-th="">
+                            <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>								
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr class="visible-xs">
+                        <td class="text-center"><strong>Total 1.99</strong></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+                        <td colspan="2" class="hidden-xs"></td>
+                        <td class="hidden-xs text-center"><strong>Total $1.99</strong></td>
+                        <td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+                    </tr>
+                </tfoot>
+            </table>
+            <script src="./js/checkout.js"></script>
+            <% include partials/footer%>
+        </div>    
+    </body>
+    </html>

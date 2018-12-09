@@ -36,7 +36,11 @@ var schema = mongoose.Schema({
         status:{
             type: String,
         }
-    }]
+    }],
+    
+    password:{
+        type: String,
+    }
 });
 
 mongoose.model('User', schema);

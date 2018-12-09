@@ -9,27 +9,32 @@
     <% include partials/head%>
 </head>
 <body>
-    <% include partials/header%>
-    <% include nav%>
-    <section>
-        <div class="container">
-            <%products%>
-            <% products.forEach(function(product){ %>
-                <figure class="card card-product">
-                    <div class="img-wrap"><img src="<%=product.url %>"></div>
-                    <figcaption class="info-wrap">
-                        <h4 class="title"><%=product.title%></h4>
-                    </figcaption>
-                    <div class="bottom-wrap">
-                        <a href="/product/<%=product._id %>" class="btn btn-sm btn-primary float-right">Details</a>	
-                        <a href="/add-to-cart/<%=product._id %>" class="btn btn-sm btn-primary float-right">Add to cart</a>	
-                        <div class="price-wrap h5">
-                            <span class="price-new"><%=product.price %></span>
-                        </div> <!-- price-wrap.// -->
-                    </div> <!-- bottom-wrap.// -->
-                </figure>
-                <% });  %>
+    <div class="container">
+        <% include partials/header%>
+        <% include partials/nav%>
+        <section >
+            <div class="row col-sm-12">
+                <%products%>
+                <% products.forEach(function(product){ %>
+                <div class="card col-sm-4" style="width: 18rem;">
+                    <figure class="card card-product">
+                        <div class="img-wrap"><img src="<%=product.url %>" width="300" height="390"></div>
+                        <figcaption class="info-wrap">
+                            <h4 class="title"><%=product.title%></h4>
+                        </figcaption>
+                        <div class="bottom-wrap">
+                            <a href="/product/<%=product._id %>" class="btn btn-sm btn-primary float-right">Details</a>	
+                            <a href="/add-to-cart/<%=product._id %>" class="btn btn-sm btn-primary float-right">Add to cart</a>	
+                            <div class="price-wrap h5">
+                                <span class="price-new">$<%=product.price %></span>
+                            </div> <!-- price-wrap.// -->
+                        </div> <!-- bottom-wrap.// -->
+                    </figure>
+                </div>
+                    <% });  %>
+                </div>
             </div>
         </section>
+        
     </body>
     </html>

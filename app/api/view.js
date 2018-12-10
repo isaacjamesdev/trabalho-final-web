@@ -3,5 +3,8 @@ module.exports = (app) =>{
     api.signUp = (req,res)=>{
         res.render('sign-up');
     }
+    api.register = (req,res)=>{
+        res.render('register-product');
+    }
     return api;
 }

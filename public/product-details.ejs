@@ -1,66 +1,73 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-<% include partials/head%>
-<% include partials/header%>
-<% include nav%>
-<div class="container">
-    <div class="card">
-        <div class="row">
-            <article class="gallery-wrap"> 
-                <div class="img-big-wrap">
-                    <div> <a href="#"><img src="<%=product.url%>" height="364" width="443"></a></div>
-                </div> <!-- slider-product.// -->
-            </article> <!-- gallery-wrap .end// -->
-            <aside class="col-sm-7">
-                <article class="card-body p-5">
-                    <h3 class="title mb-3"><%=product.title%></h3>
-                    
-                    <p class="price-detail-wrap"> 
-                        <span class="price h3 text-warning"> 
-                            <span class="currency">US $</span><span class="num"><%=product.price%></span>
-                        </span>                         
-                        <hr>
-                        <div class="row">
-                            <div class="col-sm-5">
-                                <dl class="param param-inline">
-                                    <dt>Quantity: </dt>
-                                    <dd>
-                                        <select class="form-control form-control-sm" style="width:70px;">
-                                            <option> 1 </option>
-                                            <option> 2 </option>
-                                            <option> 3 </option>
-                                        </select>
-                                    </dd>
-                                </dl>  <!-- item-property .// -->
-                            </div> <!-- col.// -->
-                            <div class="col-sm-7">
-                                <dl class="param param-inline">
-                                    <dt>Size: </dt>
-                                    <dd>
-                                        <label class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                            <span class="form-check-label">SM</span>
-                                        </label>
-                                        <label class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                            <span class="form-check-label">MD</span>
-                                        </label>
-                                        <label class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                            <span class="form-check-label">XXL</span>
-                                        </label>
-                                    </dd>
-                                </dl>  <!-- item-property .// -->
-                            </div> <!-- col.// -->
-                        </div> <!-- row.// -->
-                        <hr>
-                        <a href="#" class="btn btn-lg btn-primary text-uppercase"> Buy now </a>
-                    </article> <!-- card-body.// -->
-                </aside> <!-- col.// -->
-            </div> <!-- row.// -->
-        </div> <!-- card.// -->
-    <% include partials/footer%>
-    </div>
-    <!--container.//-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%=product.title%></title>
+</head>
+<body>
+    <div class="container">
+        <% include partials/head%>
+        <% include partials/header%>
+        <% include partials/nav%>
+        <div class="card">
+            <div class="row">
+                <article class="gallery-wrap"> 
+                    <div class="img-big-wrap">
+                        <div> <a href="#"><img src="<%=product.url%>" height="390" width="300"></a></div>
+                    </div> <!-- slider-product.// -->
+                </article> <!-- gallery-wrap .end// -->
+                <aside class="col-sm-7">
+                    <article class="card-body p-5">
+                        <h3 class="title mb-3"><%=product.title%></h3>
+                        <p class="price-detail-wrap"> 
+                            <span class="price h3 text-warning"> 
+                                <span class="currency">US $</span><span class="num"><%=product.price%></span>
+                            </span>                         
+                            <hr>
+                            <form action="/checkout" method="POST">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label for="size">Gender</label>
+                                            <select class="form-control" name="gender" id="gender">
+                                                <option value="S">M</option>
+                                                <option value="L">F</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label for="quantity">Quantity</label>
+                                            <input class="form-control" type="number" name="quantity" id="quantity" value="1" >
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label for="size">Size</label>
+                                            <select class="form-control" name="size" id="size">
+                                                <option value="S">S</option>
+                                                <option value="L">L</option>
+                                                <option value="G">G</option>
+                                                <option value="XG">XG</option>
+                                            </select>
+                                        </div>
+                                    </div> <!-- col.// -->
+                                </div> <!-- row.// -->
+                                <hr>
+                                <input type="hidden" name="title" value="<%=product.title%>">
+                                <input type="hidden" name="price" value="<%=product.price%>">
+                                <input type="hidden" name="url" value="<%=product.url%>">
+                                <button type="submit" class="btn btn-sm btn-primary text-uppercase"> Buy now</button>
+                                <a class="btn btn-sm btn-primary text-uppercase" href="/add-to-cart/<%=product._id%>">Add to cart</a>
+                            </form>
+                        </article> <!-- card-body.// -->
+                    </aside> <!-- col.// -->
+                </div> <!-- row.// -->
+            </div> <!-- card.// -->
+            <% include partials/footer%>
+        </div>
+        <!--container.//-->
+    </body>
+    </html>

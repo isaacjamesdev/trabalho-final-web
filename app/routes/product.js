@@ -1,6 +1,7 @@
 module.exports = (app)=>{
-    var apiProduct = app.api.product;
     var apiView = app.api.view;
+    var apiProduct = app.api.product;
+    app.get('/', apiProduct.find);
     
     // apiView
     app.get('/product/register', apiView.register);

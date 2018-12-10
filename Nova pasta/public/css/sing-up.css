@@ -1,0 +1,127 @@
+.formulario-bg{
+    transform: translate(35%,100px);
+    width: 800px;
+    height: 450px;
+    background: #1a2a3a;
+}
+
+/* .part-1{
+    width: 50%;
+    height: 500px;
+    background-color: blue;
+    float:left;
+} */
+
+.part-1{
+    width: 350px;
+    height: 450px;
+    background: gray;
+    opacity: 0.7;
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+    text-align: center;
+    float: left;
+   }
+   
+   .part-1 p{
+       transform:translateY(20px);
+       color:white;
+       opacity: 1;
+   }
+   
+   .part-1 img{
+       transform: translateY(-10px);
+       width: 250px;
+       height: 250px;;
+   }
+   .part-1 ul{
+       transform: translate(-14px,0px);
+       list-style: none;
+   }
+   
+   .part-1 ul li{
+       display: inline;
+   }
+   .part-1 ul li img{
+       width: 30px;
+       height: 30px;
+   }
+
+   /* part 2 */
+
+   .part-2{
+       margin-left:10px;
+       margin-top:10px;
+       width: 300px;
+       float:left;
+       font-family: 'Text Me One', sans-serif;
+       color:white;
+   }
+
+   .part-2 h2{
+       color:white;
+   }
+
+   .lbl-bg{
+       display: block;
+   }
+   .bg-on{
+       border:transparent;
+       background: transparent;
+       border-bottom: 1px solid #6fe2cc;
+       width: 400px;
+   }
+
+   .bg-on:target{
+       border:none;
+   }
+
+   .form-group select option{
+       color:#1a2a3a;
+   }
+
+   .form-group select{
+       color:white;
+   }
+
+   .btn-bg{
+       float:left;
+       padding:5px 30px 5px 30px;
+       margin-bottom: 4px;
+       border-radius:5px;
+       border:transparent;
+
+   }
+
+   .btn-form-bg{
+    flex: 1 1 auto;
+    width: 150px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top:12px;
+    padding-bottom:12px;
+    text-align: center;
+    /* text-transform: uppercase; */
+    transition: 0.6s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    border:transparent;
+    cursor: pointer;
+    transform: translate(-70px,10px);
+    text-shadow: 1px 1px gray; 
+    font-family: 'Text Me One', sans-serif;
+    font-size: 18px;
+}
+
+   .btn-form-bg:hover{
+    background-position: right center; 
+}
+
+.btn-3{
+    background-image: linear-gradient(to right, #a0d6b4 0%, #4883a0 51%, #84fab0 100%);
+  }
+
+.btn-form-bg:nth-child(2){
+      transform: translate(100px,-41.5px);
+  }

@@ -2,12 +2,10 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-
+<% include partials/head%>
+<% include partials/header%>
+<% include nav%>
 <div class="container">
-	<br>  <p class="text-center">More bootstrap 4 components on <a href="http://bootstrap-ecommerce.com/"> Bootstrap-ecommerce.com</a></p>
-    <hr>
-    
-	
     <div class="card">
         <div class="row">
             <article class="gallery-wrap"> 
@@ -59,11 +57,10 @@
                         </div> <!-- row.// -->
                         <hr>
                         <a href="#" class="btn btn-lg btn-primary text-uppercase"> Buy now </a>
-                        <a href="#" class="btn btn-lg btn-outline-primary text-uppercase"> <i class="fas fa-shopping-cart"></i> Add to cart </a>
                     </article> <!-- card-body.// -->
                 </aside> <!-- col.// -->
             </div> <!-- row.// -->
         </div> <!-- card.// -->
-        
+    <% include partials/footer%>
     </div>
     <!--container.//-->

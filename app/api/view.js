@@ -6,5 +6,9 @@ module.exports = (app) =>{
     api.register = (req,res)=>{
         res.render('register-product');
     }
+
+    api.update = (req, res) => {
+        res.render('profile')
+    }
     return api;
 }

@@ -25,8 +25,12 @@ module.exports = (app)=>{
     }
     
     api.find = (req, res)=>{
+<<<<<<< HEAD
         if(!req.params.gender){
             model.find()
+=======
+        model.find()
+>>>>>>> parent of 468d90c... updates
             .then(function(product) {
                 res.render('home', {
                     products: product
@@ -35,6 +39,7 @@ module.exports = (app)=>{
                 console.log(error);
                 res.status(500).json(error);
             });
+<<<<<<< HEAD
         }
         else{
             model.find({'category': req.params.gender})
@@ -47,6 +52,8 @@ module.exports = (app)=>{
                 res.status(500).json(error);
             });
         }
+=======
+>>>>>>> parent of 468d90c... updates
     }
     
     api.findById = (req,res)=>{

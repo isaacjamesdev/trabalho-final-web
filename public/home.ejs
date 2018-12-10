@@ -5,36 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Montserrat|Open+Sans+Condensed:300,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/home.css">
     <% include partials/head%>
 </head>
 <body>
-    <div class="container">
-        <% include partials/header%>
-        <% include partials/nav%>
-        <section >
-            <div class="row col-sm-12">
-                <%products%>
-                <% products.forEach(function(product){ %>
-                <div class="card col-sm-4" style="width: 18rem;">
-                    <figure class="card card-product">
-                        <div class="img-wrap"><img src="<%=product.url %>" width="300" height="390"></div>
-                        <figcaption class="info-wrap">
-                            <h4 class="title"><%=product.title%></h4>
-                        </figcaption>
-                        <div class="bottom-wrap">
-                            <a href="/product/<%=product._id %>" class="btn btn-sm btn-primary float-right">Details</a>	
-                            <a href="/add-to-cart/<%=product._id %>" class="btn btn-sm btn-primary float-right">Add to cart</a>	
-                            <div class="price-wrap h5">
-                                <span class="price-new">$<%=product.price %></span>
-                            </div> <!-- price-wrap.// -->
-                        </div> <!-- bottom-wrap.// -->
-                    </figure>
-                </div>
-                    <% });  %>
-                </div>
+    <% include partials/header%>
+    <% include partials/nav%>
+    <section>
+        <div class="container">
+            <% products.forEach(function(product){ %>
+                <figure class="card card-product">
+                    <div class="img-wrap">
+                        <action class="add-carinho">
+                            <a href="/add-to-cart/<%=product._id %>" class="btn-add"> <span>Favorite</span></a>
+                        </action>
+                        <img class="bg-im" src="<%=product.url %>"></div>
+                    <figcaption class="info-wrap">
+                        <h4 class="title"><%=product.title%></h4>
+                    </figcaption>
+                    <div class="price-wrap h5">
+                            <span class="price-new">R$<%=product.price %></span>
+                        </div><!-- price-wrap.// -->
+                    <div class="bottom-wrap">
+                        <a href="/product/<%=product._id %>" class="btn-details">Details</a>	
+                        <a href="/add-to-cart/<%=product._id %>" class="btn-details">Add to cart</a>	
+                    </div> <!-- bottom-wrap.// -->
+                </figure>
+                <% });  %>
             </div>
         </section>
-        
+        <% include partials/footer%>
     </body>
     </html>

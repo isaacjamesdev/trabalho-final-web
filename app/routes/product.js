@@ -1,7 +1,8 @@
 module.exports = (app)=>{
-    var apiProduct = app.api.product;
-    var apiView = app.api.view;
+    var api = app.api.product;
+    app.get('/', api.find);
     
+<<<<<<< HEAD
     // apiView
     app.get('/product/register', apiView.register);
     
@@ -15,4 +16,11 @@ module.exports = (app)=>{
     
     
     
+=======
+    app.get('/product/register', (req,res)=>{
+        res.render('register-product');
+    });
+    app.post('/product/register', api.register);
+    app.get('/product/:id', api.findById);
+>>>>>>> parent of 468d90c... updates
 }

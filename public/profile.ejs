@@ -1,54 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Register Product</title>
 </head>
+
 <body>
     <% include partials/head%>
     <% include partials/header%>
     <% include partials/nav%>
-    <div class="container">    
-            <h2>Update profile</h2>
-            <form class="container" action="/update-profile" method="POST">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input class="form-control" type="text" name="name" value="<%= user.name %>" id="name" placeholder="Name">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input class="form-control" type="email" name="email" value="<%= user.email %>" id="email" placeholder="email">
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input class="form-control" type="password" name="password" value="<%= user.password %>" id="password" placeholder="Password">
-                </div>
-                <div class="form-group">
-                    <label for="gender">Gender</label>
-                    <select class="form-control" name="gender" id="gender">
-                        <%
+    <div class="container">
+        <h2>Update profile</h2>
+        <form class="container" action="/update-profile" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input class="form-control" type="text" name="name" value="<%= user.name %>" id="name" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input class="form-control" type="email" name="email" value="<%= user.email %>" id="email" placeholder="email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input class="form-control" type="password" name="password" value="<%= user.password %>" id="password"
+                    placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select class="form-control" name="gender" id="gender">
+                    <%
                         var genders = ["male", "female", "other"];
                         for (var i = 0; i < genders.length; i++) {
                             var selected = (user.gender == genders[i]) ? "selected" : "";
                         %>
-                        <option value="<%=genders[ i ] %>" <%=selected %>><%=genders[i]%></option>
-                        <%}%>
-                        
-                    </select>
-                    
+                    <option value="<%=genders[ i ] %>" <%=selected %>>
+                        <%=genders[i]%>
+                    </option>
+                    <%}%>
+
+                </select>
+
+            </div>
+            <div class="row">
+                <div class="offset-5 col-4">
+                    <button class="btn btn-primary" type="submit" id="btn-adicionar">Update</button>
+                    <button class="btn btn-danger" type="reset" id="btn-limpar">Clear</button>
                 </div>
-                <div class="row">
-                    <div class="offset-5 col-4">
-                        <button class="btn btn-primary" type="submit" id="btn-adicionar" >Update</button>
-                        <button class="btn btn-danger" type="reset" id="btn-limpar">Clear</button>
-                    </div>
-                </div>
+            </div>
         </form>
 
         <!-- Table for orders below -->
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Number</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Purchase Date</th>
+                    <th scope="col">Shipped for</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% user.orders.forEach(function(order){ %>
+                <tr>
+                    <td>
+                        <%= order.name %>
+                    </td>
+                    <td>
+                        <%= order.price %>
+                    </td>
+                    <td>
+                        <%= order.date %>
+                    </td>
+                    <td>
+                        <%= order.address %>
+                    </td>
+                    <td>
+                        <%= order.status %>
+                    </td>
+                </tr>
+                <% }); %>
+            </tbody>
+
+
+        </table>
     </div>
     <% include partials/footer%>
 </body>
+
 </html>

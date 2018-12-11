@@ -53,9 +53,9 @@ api.remove = (req,res)=>{
 }
 
 api.update = (req,res)=>{
-    model.findByIdAndUpdate(req.body.id,req.body)
+    model.findByIdAndUpdate(req.body.id, req.body)
         .then(users => {
-            res.json(users)
+            res.redirect(`/profile/${req.body.id}`)
         },error => {
             console.log().json;
             res.status(404)

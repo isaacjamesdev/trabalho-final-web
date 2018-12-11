@@ -15,6 +15,7 @@
     <div class="container">
         <h2>Update profile</h2>
         <form class="container" action="/update-profile" method="POST">
+            <input type="hidden" name="id" value="<%= user._id %>">
             <div class="form-group">
                 <label for="name">Name</label>
                 <input class="form-control" type="text" name="name" value="<%= user.name %>" id="name" placeholder="Name">

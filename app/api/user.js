@@ -34,7 +34,7 @@ api.findById = (req,res)=>{
     model.findById(req.params.id)
         .then(users =>{
             if(!users) throw Error('user not found');
-            res.json(users);
+            res.render('profile', {user: users});
         }, error =>{
             console.log(error);
             res.status(404).json(error);

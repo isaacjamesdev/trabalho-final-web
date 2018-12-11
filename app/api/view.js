@@ -1,3 +1,4 @@
+var user = require('./user')
 module.exports = (app) =>{
     api = {}
 
@@ -9,8 +10,6 @@ module.exports = (app) =>{
         res.render('register-product');
     }
 
-    api.update = (req, res) => {
-        res.render('profile')
-    }
+    
     return api;
 }

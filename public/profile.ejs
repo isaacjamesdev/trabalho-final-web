@@ -30,10 +30,10 @@
                     <select class="form-control" name="gender" id="gender">
                         <%
                         var genders = ["male", "female", "other"];
-                        for (var i = 0; i < options.length; i++) {
-                            var selected = (user.gender == options[i]) ? "selected" : "";
+                        for (var i = 0; i < genders.length; i++) {
+                            var selected = (user.gender == genders[i]) ? "selected" : "";
                         %>
-                        <option value="<%=options[ i ] %>" <%=selected %>><%=options[i]%></option>
+                        <option value="<%=genders[ i ] %>" <%=selected %>><%=genders[i]%></option>
                         <%}%>
                         
                     </select>

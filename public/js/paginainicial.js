@@ -28,3 +28,13 @@ $(document).ready(function(){
       });
     });
 });
+
+$(window).scroll(function () {
+  jQuery(window).scroll(function () {
+   if (jQuery(this).scrollTop() > 400) {
+    $("#menu").css('background-color', 'rgba(51,80,109,1)');
+   } else {
+    $("#menu").css('background-color', 'rgba(26,42,58,1)');
+   }
+  });
+ });

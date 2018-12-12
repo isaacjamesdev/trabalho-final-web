@@ -5,7 +5,7 @@ var schema = mongoose.Schema({
         type: String,
         required: true
     },
-    email:{
+    username:{
         type: String,
         required: true
     },
@@ -39,4 +39,4 @@ var schema = mongoose.Schema({
     }],
 });
 
-mongoose.model('User', schema);
+mongoose.model('users', schema);

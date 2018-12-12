@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register Product</title>
+</head>
+<body>
+    <% include partials/head%>
+    <% include partials/header%>
+    <% include partials/nav%>
+    <div class="container">    
+        <h2>Sign In</h2>
+        <form class="container" action="/auth" method="POST">
+            <div class="form-group">
+                <input class="form-control" type="text" name="username" id="username" placeholder="username">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="password" id="password" placeholder="password">
+            </div>
+            <div class="row">
+                <div class="offset-5 col-4">
+                    <button class="btn btn-primary" type="submit" id="btn-adicionar" >Enter</button>
+                </div>
+            </div>
+        </form>
+    </body>
+    </html>

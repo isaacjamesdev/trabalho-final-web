@@ -1,14 +1,32 @@
 <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:700" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 <link rel="stylesheet" href="../css/header.css">
+<script src="../js/jquery.js"></script>
+<script src="../js/paginainicial.js"></script>
 <header>
-    <div class="jumbotron jumbotron-fluid text">
+    <div class="text" id="menu">
         <div class="container">
-            <h1>ComicShirt</h1>
-            <input class="search-bg" type="text" placeholder="search"><p class="btn-a"><a  href="#"><i style="color:#1a2a3a" class="fas fa-search"></i></a></p>
-            <ul>
-                <li><a class="link-bg" href="/sign-up">sign UP</a></li>
-            </ul>
+           <ul class="list-head">
+               <li>
+                   <h2>Comic Shirt</h2>
+                </li>
+               <li class="conteu-div-li">
+                   <a href="/gender/female">Female<i class="fas fa-angle-down"></i></a></li>
+               <li class="conteu-div-li"><a href="/gender/female">Male <i class="fas fa-angle-down"></i></a></li>
+               <li>
+                   <ul class="list-bg-inp">
+                        <%if (user) { %>
+                            <li><input type="search" placeholder=" search  "></li>
+                            <li><a href="/account/<%=id%>"><%=user%></a> or <a href="/log-out">Log out</a>  <i class="fas fa-user-circle"></i></li>
+                        <% } %>
+                        <%if (!user) { %>
+                            <li><input type="search" placeholder=" search  "></li>
+                            <li><a href="/sign-in">Sign In</a> or <a href="sign-up">Sing up</a> <i class="fas fa-user-circle"></i></li>
+                        <% } %>
+                   </ul>
+               </li>
+           </ul>
         </div>
     </div>
 </header>
+

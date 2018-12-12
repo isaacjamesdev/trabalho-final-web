@@ -83,17 +83,18 @@ module.exports = (app)=>{
 
     api.addToCart = (req,res)=>{
         let productId = req.params.id;
-        var cart = new Cart(req.session.cart? req.session.cart : {});
+        // var cart = new Cart(req.session.cart? req.session.cart : {});
         model.findById(productId)
                 .then(product =>{
                     if(!product) throw Error('product not found');
-                    cart.add(product, product.id)
-                    req.session.cart = cart;
-                    console.log(req.session.cart);
+                    
+                    app.get('cart').push(product);
+                    // cart.add(product, product.id)
+                    // req.session.cart = cart;
+                    // console.log(req.session.cart);
                     res.redirect('/')
-                    }, error =>{
-                    // console.log(error);
-                    res.status(404).json(error);
+                }, error =>{
+                    res.status(404).json(error).redirect('/');
                     }
                 );
     }

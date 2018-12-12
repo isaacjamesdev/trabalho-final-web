@@ -2,13 +2,17 @@
 font-family: 'Open Sans Condensed', sans-serif;
 font-family: 'Comfortaa', cursive; */
 .section{
-    margin-bottom:100px;
+    margin-bottom:0px;
+}
+
+.container{
+    margin-bottom:20px;
 }
 .bg-im{
     
     border: #1a2a3a 1px solid;
     margin:4px;
-    width: 270px;
+    width:270px;
     height: 300px;    
 }
 
@@ -77,20 +81,25 @@ display: none;
 
 /* buttons */
 .btn-details{
+    transform: translateY(30px);
    margin-left:23px;
    padding:5px 15px 5px 15px;
    background:#1a2a3a;
    color:white;
    border-radius:5px;
-   margin-bottom: 10px;
-   display: block;
+   position: relative;
+   margin-bottom: 3px;
+   display: inherit;
    width: 300px;
    text-align: center;
 }
+
+.btn-details:nth-child(2){}
 .btn-details:hover{
      color:#1a2a3a;
      background: transparent;
      border:2px solid #1a2a3a;
+     position: initial;
 }
 .btn-details:link{
     text-decoration: none;
@@ -100,8 +109,11 @@ display: none;
 
 .card-product{
     width: 350px;
+    height: 500px;
     text-align: center;
+    display: flex;
     float:left;
-    margin-left:20px;
+    margin-left:10px;
     margin-top:10px;
+
 }

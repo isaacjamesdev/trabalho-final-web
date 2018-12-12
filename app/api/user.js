@@ -35,7 +35,7 @@ api.findById = (req,res)=>{
     model.findById(req.params.id)
         .then(users =>{
             if(!users) throw Error('user not found');
-            res.json(users);
+            res.render('profile', {user: users});
         }, error =>{
             console.log(error);
             res.status(404).json(error);
@@ -54,9 +54,9 @@ api.remove = (req,res)=>{
 }
 
 api.update = (req,res)=>{
-    model.findByIdAndUpdate(req.body.id,req.body)
+    model.findByIdAndUpdate(req.body.id, req.body)
         .then(users => {
-            res.json(users)
+            res.redirect(`/profile/${req.body.id}`)
         },error => {
             console.log().json;
             res.status(404)

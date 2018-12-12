@@ -1,8 +1,9 @@
-const express = require('express');
+var express = require('express');
 var consign = require('consign');
 var bodyParser = require('body-parser');
-const app = express();
-const mongoose = require('mongoose');
+var app = express();
+var mongoose = require('mongoose');
+
 // express session
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
@@ -13,6 +14,7 @@ app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({
       extended:true
   }));
+
 // config session-express
 app.use(session(
       {secret: 'mysupersecret',
@@ -21,14 +23,18 @@ app.use(session(
       store: new MongoStore({mongooseConnection: mongoose.connection}),
       cookie:{maxAge: 100 * 60 * 1000}
 }));
-app.set('secret', 'isaacjames');
-app.use( express.static('./public'))
-// app.use((req,res,next)=>{
-//       res.locals.login = req.isAuthenticated
-//       res.locals.session = req.session;
-//       next();
-// });
 
+app.set('secret', 'isaacjames');
+// login-user
+
+app.use((req,res,next)=>{
+      res.locals.user = app.get('name');
+      res.locals.id = app.get('id');
+      next();
+});
+
+
+app.use( express.static('./public'))
 // auth precisa ser carregado primeiro
 consign({cwd:'app'})
       .include('models')
@@ -36,6 +42,8 @@ consign({cwd:'app'})
       .then('routes/auth.js')
       .then('routes')
       .into(app);
-
+app.get('/',(req,res)=>{
+      req.session.user = token;
+})
 
 module.exports = app;

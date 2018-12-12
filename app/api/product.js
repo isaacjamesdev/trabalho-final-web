@@ -87,13 +87,14 @@ module.exports = (app)=>{
         model.findById(productId)
                 .then(product =>{
                     if(!product) throw Error('product not found');
+                    
+                    
                     cart.add(product, product.id)
                     req.session.cart = cart;
                     console.log(req.session.cart);
                     res.redirect('/')
-                    }, error =>{
-                    // console.log(error);
-                    res.status(404).json(error);
+                }, error =>{
+                    res.status(404).json(error).redirect('/');
                     }
                 );
     }

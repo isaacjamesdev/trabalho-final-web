@@ -20,17 +20,12 @@ module.exports = (app) =>{
                         expiresIn:20000
                     });
                     console.log('====token criado====');
-                    res.set('x-access-token', token);
+                    // res.set('x-access-token', token);
+                    app.set('token', token);
+                    app.set('name', user.name);
+                    app.set('id', user.id);
 
-                    res.json({
-                        'message': 'token criado',
-                        'token': token
-                    })
-                    
-                    // window.sessionStorage.token = token;
-                    // console.log(window.sessionStorage.token);
-                    // res.end('welcome');
-                    
+                    res.redirect('/');
                 }
             }, (error)=>{
                 console.log('====Username not found====');
@@ -39,7 +34,8 @@ module.exports = (app) =>{
     };
 
     api.checkAuth = (req,res,next)=>{
-        var token = req.headers['x-access-token'];
+        // var token = req.headers['x-access-token'];
+        var token = app.get('token');
         if(token){
             console.log('====verificando token====');
             jwt.verify(token, app.get('secret'), (error, decoded)=>{
@@ -52,9 +48,17 @@ module.exports = (app) =>{
             });
         }else{
             console.log('====token not sent====');
-            res.sendStatus(401);
+            res.redirect('/sign-in');
         }
     };
+
+    api.logOut = (req,res,next)=>{
+        app.set('token', '');
+        app.set('name', '');
+        app.set('id', '');
+        res.redirect('/');
+        next();
+    }
 
     return api;
 }

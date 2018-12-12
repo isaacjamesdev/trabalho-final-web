@@ -12,5 +12,9 @@ module.exports = (app) =>{
     api.update = (req, res) => {
         res.render('profile')
     }
+
+    api.signIn = (req, res) => {
+        res.render('sign-in')
+    }
     return api;
 }

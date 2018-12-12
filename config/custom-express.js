@@ -21,7 +21,7 @@ app.use(session(
       store: new MongoStore({mongooseConnection: mongoose.connection}),
       cookie:{maxAge: 100 * 60 * 1000}
 }));
-
+app.set('secret', 'isaacjames');
 app.use( express.static('./public'))
 // app.use((req,res,next)=>{
 //       res.locals.login = req.isAuthenticated
@@ -29,9 +29,11 @@ app.use( express.static('./public'))
 //       next();
 // });
 
+// auth precisa ser carregado primeiro
 consign({cwd:'app'})
       .include('models')
       .then('api')
+      .then('routes/auth.js')
       .then('routes')
       .into(app);
 

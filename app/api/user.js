@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var api = {};
-var model = mongoose.model('User');
+var model = mongoose.model('users');
 
 api.list = (req, res) => {
     model.find({})
@@ -16,10 +16,11 @@ api.list = (req, res) => {
 api.register = (req, res) => {
     var user = {
         'name':req.body.name,
-        'email':req.body.email,
+        'username':req.body.username,
         'password':req.body.password,
         'gender':req.body.gender
     }
+    console.log(user);
     model.create(user)
             .then(user =>{
                 res.status(204).redirect('/')

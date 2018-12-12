@@ -13,7 +13,4 @@ module.exports = (app)=>{
     
     app.get('/gender/:gender', apiProduct.find);
     app.get('/add-to-cart/:id', apiProduct.addToCart);
-    
-    
-    
 }

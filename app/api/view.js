@@ -10,6 +10,14 @@ module.exports = (app) =>{
         res.render('register-product');
     }
 
-    
+
+    api.update = (req, res) => {
+        res.render('profile')
+    }
+
+    api.signIn = (req, res) => {
+        res.render('sign-in')
+    }
+
     return api;
 }

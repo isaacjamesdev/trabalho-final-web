@@ -1,8 +1,17 @@
+body{
+    top:0px;
+    left:0px;
+    overflow: auto;
+}
+
+
 .formulario-bg{
-    transform: translate(35%,100px);
+    margin-top:50px;
+    transform: translate(35%);
     width: 800px;
     height: 450px;
     background: #1a2a3a;
+    margin-bottom:30px;
 }
 
 /* .part-1{

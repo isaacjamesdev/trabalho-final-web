@@ -12,12 +12,12 @@
     <% include partials/nav%>
     <div class="container">    
             <h2>Register Product</h2>
-            <form class="container" action="/product/register" method="POST">
+            <form class="container" action="/product/register" enctype="multipart/form-data" method="POST">
                 <div class="form-group">
                     <input class="form-control" type="text" name="title" id="title" placeholder="title">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="url" id="url" placeholder="url">
+                    <input class="form-control" type="file" name="photo" id="file">
                 </div>
                 <div class="form-group">
                     <input class="form-control" type="text" name="category" id="category" placeholder="category">
@@ -37,6 +37,5 @@
         </form>
     </div>
     <!-- <% include partials/footer%> -->
-    merda
 </body>
 </html>

@@ -20,6 +20,8 @@
     "express-session": "^1.15.6",
     "jsonwebtoken": "^8.4.0",
     "mongoose": "^5.3.14",
-    "request": "^2.88.0"
+    "mongoose-auto-increment": "^5.0.1",
+    "request": "^2.88.0",
+    "shortid": "^2.2.14"
   }
 }

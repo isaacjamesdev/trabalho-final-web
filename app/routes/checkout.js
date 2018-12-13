@@ -3,5 +3,5 @@ module.exports = (app)=>{
     var apiView = app.api.view
     app.post('/checkout', api.checkout);
     app.get('/checkout', apiView.checkout);
-    
+    app.post('/payment', api.payment)
 }

@@ -20,9 +20,12 @@ module.exports = (app)=>{
     api.payment = (req, res) => {
         idOrder = shortId.generate();
         products = req.body.cart;
+        price = req.body.total;
+
         res.render('payment',{
             cart: products,
-            id: idOrder
+            id: idOrder,
+            price: price
         });
         console.log(idOrder);
     }

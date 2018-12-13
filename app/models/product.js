@@ -20,12 +20,11 @@ var schema = mongoose.Schema({
     stock:{
         type: Number,
         required: true
-    }
-    // ,
-    // imagePath:{
-    //     type: String,
-    //     required: true
-    // }
+    },
+     imagePath:{
+         type: String,
+         required: true
+     }
 });
 
 mongoose.model('products', schema);

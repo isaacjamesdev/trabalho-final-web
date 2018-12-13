@@ -96,7 +96,7 @@ module.exports = (app)=>{
         model.findById(productId)
                 .then(product =>{
                     if(!product) throw Error('product not found');
-
+                    product.quantity = 1;
                     app.get('cart').push(product);
                     res.redirect('/')
 

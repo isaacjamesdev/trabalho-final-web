@@ -19,5 +19,9 @@ module.exports = (app) =>{
         res.render('sign-in')
     }
 
+    api.checkout = (req, res) => {
+        res.render('checkout')
+    }
+
     return api;
 }

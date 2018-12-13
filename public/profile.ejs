@@ -10,8 +10,9 @@
 
 <body>
     <% include partials/head%>
-    <% include partials/header%>
+    
     <% include partials/nav%>
+
     <div class="container">
         <h2>Update profile</h2>
         <form class="container" action="/update-profile" method="POST">
@@ -56,42 +57,42 @@
         <!-- Table for orders below -->
 
         <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Number</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Purchase Date</th>
-                    <th scope="col">Shipped for</th>
-                    <th scope="col">Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% user.orders.forEach(function(order){ %>
-                <tr>
-                    <td>
-                        <%= order.name %>
-                    </td>
-                    <td>
-                        <%= order.price %>
-                    </td>
-                    <td>
-                        <%= order.date %>
-                    </td>
-                    <td>
-                        <%= order.address %>
-                    </td>
-                    <td>
-                        <%= order.status %>
-                    </td>
-                </tr>
-                <% }); %>
-            </tbody>
-
-
-        </table>
+                <thead>
+                    <tr>
+                        <th scope="col">Number</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Purchase Date</th>
+                        <th scope="col">Shipped for</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% user.orders.forEach(function(order){ %>
+                    <tr>
+                        <td>
+                            <%= order.name %>
+                        </td>
+                        <td>
+                            <%= order.price %>
+                        </td>
+                        <td>
+                            <%= order.date %>
+                        </td>
+                        <td>
+                            <%= order.address %>
+                        </td>
+                        <td>
+                            <%= order.status %>
+                        </td>
+                    </tr>
+                    <% }); %>
+                </tbody>
+    
+    
+            </table>
     </div>
-    <% include partials/footer%>
+    <!-- <% include partials/footer%> -->
 </body>
 
 </html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Payment</title>
+</head>
+<body>
+    <% include partials/head%>
+    <% include partials/header%>
+    <% include partials/nav%>
+    <div class="container">    
+            <h2>Payment</h2>
+            <form class="container" action="/finish-order" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="title" id="title" placeholder="title">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="file" name="photo" id="file">
+                </div>
+                
+                <div class="form-group">
+                    <label   class="lbl-bg" for="category">Category</label>
+                    <select class="form-control" name="category" id="category">
+                        <option value="t-shirt">T-Shirt</option>
+                        <option value="accessory">Accessory</option>
+                        <option value="shoes">Shoes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label   class="lbl-bg" for="gender">Gender</label>
+                    <select class="form-control" name="gender" id="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control" type="number" min="0.00" max="10000.00" step="0.01" name="price" id="price" placeholder="price">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="number" name="stock" id="stock" placeholder="stock">
+                </div>
+
+                <div class="row">
+                    <div class="offset-5 col-4">
+                        <button class="btn btn-primary" type="submit" id="btn-adicionar" >Adds</button>
+                        <button class="btn btn-danger" type="reset" id="btn-limpar">clear</button>
+                    </div>
+                </div>
+        </form>
+    </div>
+    <!-- <% include partials/footer%> -->
+</body>
+</html>

@@ -15,5 +15,10 @@ module.exports = (app)=>{
         res.redirect('/checkout')
     }
 
+    api.payment = (req, res) => {
+        products = req.body.cart
+        res.render('payment', {cart: products})
+    }
+
     return api;
 }

@@ -21,7 +21,7 @@ var schema = mongoose.Schema({
         type: Number,
         required: true
     },
-    imagePath:{
+     imagePath:{
          type: String,
          required: true
      }

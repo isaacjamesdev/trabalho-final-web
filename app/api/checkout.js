@@ -2,7 +2,8 @@ module.exports = (app)=>{
     var api = {}
 
     api.checkout = (req,res)=>{
-        var item = {
+        var product = {
+            '_id': req.body.id,
             'title': req.body.title,
             'price': req.body.price,
             'quantity': req.body.quantity,
@@ -10,9 +11,8 @@ module.exports = (app)=>{
             'size': req.body.size,
             'url': req.body.url,
         }
-        res.render('checkout', {
-            'item': item
-        })
+        app.get('cart').push(product);
+        res.redirect('/checkout')
     }
 
     return api;

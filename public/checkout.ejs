@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><%=item.title%></title>
+    <title>Checkout</title>
 </head>
 <body>
     <% include partials/head%>
@@ -47,7 +47,7 @@
                             <td data-th="Quantity">
                                 <input type="number" class="form-control text-center" value="<%=item.quantity%>" id="quantity">
                             </td>
-                            <td data-th="Subtotal" class="text-center">$<%=item.quantity * item.price%></td>
+                            <td data-th="Subtotal" class="text-center">$<%=item.price *item.quantity%> </td>
                             <td class="actions" data-th="">
                                 <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
                                 <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>								
@@ -67,6 +67,7 @@
                     </tr>
                 </tfoot>
             </table>
+
             <script src="./js/checkout.js"></script>
             <% include partials/footer%>
         </div>    

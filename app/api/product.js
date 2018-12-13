@@ -33,7 +33,7 @@ module.exports = (app)=>{
     }
     
     api.find = (req, res)=>{
-        if(!req.params.gender){
+        if(!req.body.gender){
             model.find()
             .then(function(product) {
                 res.render('home', {
@@ -45,7 +45,7 @@ module.exports = (app)=>{
             });
         }
         else{
-            model.find({'gender': req.params.gender})
+            model.find({'gender': req.body.gender})
             .then(function(product) {
                 res.render('home', {
                     products: product

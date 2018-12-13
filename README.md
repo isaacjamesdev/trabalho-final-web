@@ -4,8 +4,7 @@
 [https://comicshirts.herokuapp.com/](https://comicshirts.herokuapp.com/)
 
 ## Run locally on your machine
-- Download or clone the project
-Make sure that Node, MongoDB and NPM are installed on your machine
+- Download or clone the project. Make sure that Node, MongoDB and NPM are installed on your machine
 - On your terminal, type ```npm install``` to install the dependencies
 - Change the MongoDB connection setup on index.js to your own environment variables
 - Type ```npm start```. This will start project at http://localhost:3000

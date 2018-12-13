@@ -57,10 +57,10 @@
                 </tbody>
                 <tfoot>
                     <p></p>
-                    
+
                     <%var teste = 0%>
                     <%cart.forEach(function(item){ %>
-                        <%teste += item.price%>
+                        <%teste += (item.price*item.quantity)%>
                     <%})%>
                     <tr>
                         <td><a href="/" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>

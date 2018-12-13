@@ -16,7 +16,7 @@ app.use(fileUpload())
 app.set('views', __dirname+'/../public');
 app.set('view engine', 'ejs')
 app.set('secret', 'isaacjames');
-app.set('cart',[{}]);
+app.set('cart',[]);
 
 app.use(bodyParser.urlencoded({
       extended:true

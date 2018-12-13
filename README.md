@@ -1,7 +1,7 @@
 # ComicShirts - NodeJS/Express
 
 # App running on Heroku
-(https://comicshirts.herokuapp.com/)
+https://comicshirts.herokuapp.com/
 
 ## Run locally on your machine
 - Download or clone the project. Make sure that Node, MongoDB and NPM are installed on your machine

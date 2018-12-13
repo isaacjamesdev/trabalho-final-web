@@ -1,3 +1,5 @@
+var shortId = require('shortid');
+
 module.exports = (app)=>{
     var api = {}
 
@@ -16,8 +18,13 @@ module.exports = (app)=>{
     }
 
     api.payment = (req, res) => {
-        products = req.body.cart
-        res.render('payment', {cart: products})
+        idOrder = shortId.generate();
+        products = req.body.cart;
+        res.render('payment',{
+            cart: products,
+            id: idOrder
+        });
+        console.log(idOrder);
     }
 
     return api;

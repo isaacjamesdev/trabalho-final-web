@@ -13,15 +13,20 @@
     <div class="container">    
             <h2>Payment</h2>
             <form class="container" action="/finish-order" method="POST">
+                <input type="hidden" name="orderId" value="<%= id %>">
+                <input type="hidden" name="name" value="<%= cart. %>">
+                <% var d = new Date(day, month, year) %>
+                <input type="hidden" name="date" value="<%= d %>">
                 <div class="form-group">
-                    <input class="form-control" type="text" name="title" id="title" placeholder="title">
+                    <label class="lbl-bg" for="address">Adress for shipping</label>
+                    <input class="form-control" type="text" name="address" id="address">
                 </div>
                 <div class="form-group">
                     <input class="form-control" type="file" name="photo" id="file">
                 </div>
                 
                 <div class="form-group">
-                    <label   class="lbl-bg" for="category">Category</label>
+                    <label class="lbl-bg" for="category">Category</label>
                     <select class="form-control" name="category" id="category">
                         <option value="t-shirt">T-Shirt</option>
                         <option value="accessory">Accessory</option>

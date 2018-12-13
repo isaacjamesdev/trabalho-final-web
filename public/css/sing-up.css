@@ -76,7 +76,6 @@ body{
    }
    .bg-on{
        border:transparent;
-       background: transparent;
        border-bottom: 1px solid #6fe2cc;
        width: 400px;
    }

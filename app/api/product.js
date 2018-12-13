@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 var Cart = require('../models/cart');
-
 module.exports = (app)=>{  
     var api = {};
     var model = mongoose.model('products');
@@ -83,20 +82,23 @@ module.exports = (app)=>{
 
     api.addToCart = (req,res)=>{
         let productId = req.params.id;
-        // var cart = new Cart(req.session.cart? req.session.cart : {});
+        // var cart = new Cart(req.session.cart ? req.session.cart : {});
+        
         model.findById(productId)
                 .then(product =>{
                     if(!product) throw Error('product not found');
-                    
+
                     app.get('cart').push(product);
-                    // cart.add(product, product.id)
-                    // req.session.cart = cart;
-                    // console.log(req.session.cart);
                     res.redirect('/')
+
+                    // cart.add(product, product._id);
+                    // req.session.cart = cart;
+                    // console.log('====my cart===='+req.session.cart);
                 }, error =>{
                     res.status(404).json(error).redirect('/');
                     }
                 );
     }
+    
     return api;
 }

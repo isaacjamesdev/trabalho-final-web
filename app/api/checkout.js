@@ -9,7 +9,7 @@ module.exports = (app)=>{
             'quantity': req.body.quantity,
             'gender': req.body.gender,
             'size': req.body.size,
-            'url': req.body.url,
+            'imagePath': `/img/${photo.name}`
         }
         app.get('cart').push(product);
         res.redirect('/checkout')

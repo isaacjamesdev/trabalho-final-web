@@ -4,9 +4,10 @@
   "description": "Trabalho final da disciplina de WWB 2018.2",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
-  "author": "Isaac James e Rosembergon Lacerda",
+  "author": "Isaac James, Isac Moura e Rosembergon Lacerda",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
@@ -15,6 +16,7 @@
     "consign": "^0.1.6",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "express-fileupload": "^1.0.0",
     "express-session": "^1.15.6",
     "jsonwebtoken": "^8.4.0",
     "mongoose": "^5.3.14",

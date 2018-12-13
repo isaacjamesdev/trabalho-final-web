@@ -4,14 +4,20 @@ module.exports = (app)=>{
     var api = {};
     var model = mongoose.model('products');
     
-    api.register = (req,res)=>{
+    api.register = (req, res)=>{
+
+        var photo = req.files.photo;
+        photo.mv(process.cwd() + `/public/img/${photo.name}`, function (err) {
+            console.log(err);
+        })
+
         var product = {
             'title': req.body.title,
-            'url': req.body.url,
             'category': req.body.category,
             'gender': req.body.gender,
             'price': req.body.price,
             'stock': req.body.stock,
+            'imagePath': `/img/${photo.name}`
         }
 
         console.log(product);

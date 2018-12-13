@@ -37,10 +37,6 @@ var schema = mongoose.Schema({
             type: String,
         }
     }],
-    
-    password:{
-        type: String,
-    }
 });
 
 mongoose.model('users', schema);

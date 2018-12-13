@@ -3,10 +3,13 @@ var consign = require('consign');
 var bodyParser = require('body-parser');
 var app = express();
 var mongoose = require('mongoose');
-
+var fileUpload = require('express-fileupload');
 // express session
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
+
+// Default options
+app.use(fileUpload())
 
 app.set('views', __dirname+'/../public');
 app.set('view engine', 'ejs')

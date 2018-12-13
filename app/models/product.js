@@ -13,6 +13,10 @@ var schema = mongoose.Schema({
         type: String,
         required: true
     },
+    gender:{
+        type: String,
+        required: true
+    },
     price:{
         type: Number,
         required: true
@@ -20,11 +24,12 @@ var schema = mongoose.Schema({
     stock:{
         type: Number,
         required: true
-    },
-    imagePath:{
-        type: String,
-        required: true
     }
+    // ,
+    // imagePath:{
+    //     type: String,
+    //     required: true
+    // }
 });
 
 mongoose.model('products', schema);

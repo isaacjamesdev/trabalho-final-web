@@ -24,16 +24,23 @@
                         <p class="price-detail-wrap"> 
                             <span class="price h3 text-warning"> 
                                 <span class="currency">US $</span><span class="num"><%=product.price%></span>
-                            </span>                         
+                            </span>                              
                             <hr>
                             <form action="/checkout" method="POST">
                                 <div class="row">
                                     <div class="col-sm-2">
                                         <div class="form-group">
                                             <label for="size">Gender</label>
-                                            <select class="form-control" name="gender" id="gender">
-                                                <option value="S">M</option>
-                                                <option value="L">F</option>
+                                            <select class="form-control" name="gender" id="gender" disabled>
+                                                <option value="<%=product.category%>"><%=product.category%></option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="size">Category</label>
+                                            <select class="form-control" name="gender" id="gender" disabled>
+                                                <option value="<%=product.category%>"><%=product.category%></option>
                                             </select>
                                         </div>
                                     </div>

@@ -9,17 +9,20 @@ module.exports = (app)=>{
             'title': req.body.title,
             'url': req.body.url,
             'category': req.body.category,
+            'gender': req.body.gender,
             'price': req.body.price,
             'stock': req.body.stock,
         }
+
+        console.log(product);
         
         model.create(product)
-            .then(product =>{
-                res.status(204).redirect('/');
-            }, error =>{
-                console.log('error in serve');
-                res.status(500).json(error);
-            }
+            .then((product) =>{
+                    res.status(204).redirect('/');
+                }, error =>{
+                    console.log('error in serve');
+                    res.status(500).json(error);
+                }
             );
     }
     
@@ -36,7 +39,7 @@ module.exports = (app)=>{
             });
         }
         else{
-            model.find({'category': req.params.gender})
+            model.find({'gender': req.params.gender})
             .then(function(product) {
                 res.render('home', {
                     products: product

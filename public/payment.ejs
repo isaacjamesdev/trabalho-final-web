@@ -14,44 +14,17 @@
             <h2>Payment</h2>
             <form class="container" action="/finish-order" method="POST">
                 <input type="hidden" name="orderId" value="<%= id %>">
-                <input type="hidden" name="name" value="<%= cart. %>">
                 <% var d = new Date(day, month, year) %>
                 <input type="hidden" name="date" value="<%= d %>">
+                <input type="hidden" name="price" value="<%= price %>">
                 <div class="form-group">
-                    <label class="lbl-bg" for="address">Adress for shipping</label>
+                    <label class="lbl-bg" for="address">Address for shipping</label>
                     <input class="form-control" type="text" name="address" id="address">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="file" name="photo" id="file">
-                </div>
-                
-                <div class="form-group">
-                    <label class="lbl-bg" for="category">Category</label>
-                    <select class="form-control" name="category" id="category">
-                        <option value="t-shirt">T-Shirt</option>
-                        <option value="accessory">Accessory</option>
-                        <option value="shoes">Shoes</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label   class="lbl-bg" for="gender">Gender</label>
-                    <select class="form-control" name="gender" id="gender">
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <input class="form-control" type="number" min="0.00" max="10000.00" step="0.01" name="price" id="price" placeholder="price">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="number" name="stock" id="stock" placeholder="stock">
                 </div>
 
                 <div class="row">
                     <div class="offset-5 col-4">
-                        <button class="btn btn-primary" type="submit" id="btn-adicionar" >Adds</button>
-                        <button class="btn btn-danger" type="reset" id="btn-limpar">clear</button>
+                        <button class="btn btn-primary" type="submit" id="btn-adicionar" >Pay</button>
                     </div>
                 </div>
         </form>

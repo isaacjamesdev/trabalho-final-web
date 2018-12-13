@@ -57,15 +57,15 @@
                 </tbody>
                 <tfoot>
                     <p></p>
-                    
-                    <%var teste = 0%>
+
+                    <%var total = 0%>
                     <%cart.forEach(function(item){ %>
-                        <%teste += (item.price*item.quantity)%>
+                        <%total += (item.price*item.quantity)%>
                     <%})%>
                     <tr>
                         <td><a href="/" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
                         <td colspan="2" class="hidden-xs"></td>
-                        <td id="total" class="hidden-xs text-center"><strong><%=teste%></strong></td>
+                        <td id="total" class="hidden-xs text-center"><strong><%=total%></strong></td>
                         <td><a href="/payment" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
                     </tr>
                 </tfoot>

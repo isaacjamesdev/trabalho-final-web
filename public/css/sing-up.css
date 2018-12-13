@@ -76,7 +76,6 @@ body{
    }
    .bg-on{
        border:transparent;
-       background: transparent;
        border-bottom: 1px solid #6fe2cc;
        width: 400px;
    }
@@ -87,10 +86,6 @@ body{
 
    .form-group select option{
        color:#1a2a3a;
-   }
-
-   .form-group select{
-       color:white;
    }
 
    .btn-bg{

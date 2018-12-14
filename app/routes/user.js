@@ -5,4 +5,5 @@ module.exports = (app)=>{
     app.post('/sign-up', apiUser.register);
     app.get('/profile/:id', apiUser.findById);
     app.post('/update-profile', apiUser.update);
+    app.post('/finish-order', apiUser.makeOrder);
 }

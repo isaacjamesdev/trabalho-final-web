@@ -65,12 +65,15 @@
                     <tr>
                         <td><a href="/" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
                         <td colspan="2" class="hidden-xs"></td>
-                        <td id="total" class="hidden-xs text-center"><strong><%=total%></strong></td>
-                        <td><a href="/payment" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+                        <td id="total" class="hidden-xs text-center"><strong>total: $<%=total%></strong></td>
+                        <form action="/payment" method="post">
+                            <input type="hidden" name="total" value="<%=total%>">
+                            <td><button type="submit" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td></button>    
+                        </form>            
                     </tr>
                 </tfoot>
             </table>
-
+            
             <script src="./js/checkout.js"></script>
             <% include partials/footer%>
         </div>    

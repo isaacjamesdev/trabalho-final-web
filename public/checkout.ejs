@@ -65,9 +65,9 @@
                     <tr>
                         <td><a href="/" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
                         <td colspan="2" class="hidden-xs"></td>
-                        <td id="total" class="hidden-xs text-center"><strong><%=teste%></strong></td>
+                        <td id="total" class="hidden-xs text-center"><strong><%=total%></strong></td>
                         <td><form action="/payment" method="post">
-                            <input type="hidden" name="total" value="<%=teste%>">
+                            <input type="hidden" name="total" value="<%=total%>">
                             <input type="hidden" name="cart" value="<%= cart %>">
                             <button type="submit" class="btn btn-success">Pay</button>
                         </form> </td>

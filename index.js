@@ -3,6 +3,6 @@ app = require('./config/custom-express');
 var mongoURI =  'mongodb://admin:admin123@ds011409.mlab.com:11409/comic-shirt'
 require('./config/database')(mongoURI);
 
-app.listen(3000, ()=>{
+app.listen(80, ()=>{
     console.log("Ouvindo porta ")
 })

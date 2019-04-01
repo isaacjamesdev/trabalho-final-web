@@ -9,6 +9,7 @@ https://comicshirts.herokuapp.com/
 - Change the MongoDB connection setup on index.js to your own environment variables
 - Type ```npm start```. This will start project at http://localhost:3000
 
+
 ### Technologies
 ###### Back-end
 NodeJS, Express, MongoDB, Mongoose. 
